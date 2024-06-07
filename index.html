@@ -1,0 +1,49 @@
+<html>
+<head>
+		<title> Languages App by Kamal Sir </title>
+		<style>
+					* {font-size:60px;}
+					body {background-color:lightblue;}
+					input[type="checkbox"]{width:2%; height:0.5em;}
+		</style>
+</head>
+<body>
+<center>
+			<h1>Languages You Know App</h1>
+			<form onsubmit="show()">
+					<input type="text" placeholder="enter ur name" id="name"/>
+					<br/><br/>
+					<input type="checkbox" id="js" />JavaScript
+					<input type="checkbox" id="ja" />Java
+					<input type="checkbox" id="py" />Python
+					<br/><br/>	
+					<input type = "submit" class="btn"/>
+			</form>
+			<h2 id="msg"/>
+			<script>
+						function show()
+						{
+								event.preventDefault();
+								let name = document.getElementById("name");
+								let js = document.getElementById("js");
+								let ja = document.getElementById("ja");
+								let py = document.getElementById("py");
+								let msg = document.getElementById("msg");
+								
+								let choice = "";
+								if(js.checked)						choice +=" JavaScript ";
+								if(ja.checked)						choice +=" Java ";
+								if(py.checked)						choice +=" Python ";
+								
+								if(choice.length == 0)
+											choice = "then learn something";
+				
+								let ans = "name = "+ name.value + " choice = " + choice;
+								msg.innerHTML = ans;
+
+						}
+			</script>
+</center>
+</body>
+</html>
+			
